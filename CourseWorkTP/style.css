@@ -1,0 +1,365 @@
+﻿.main-content {
+    min-height: 400px;
+}
+
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+
+    justify-items: center;
+}
+
+.product-card {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Bahnschrift', sans-serif;
+    position: relative; 
+    width: 100%;
+}
+
+.product-image {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.product-content {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FF30C6;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center; 
+    margin-top: 15px; 
+}
+
+.product-description {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+    padding: 0 10px;
+    text-align: center; 
+    flex-grow: 1;
+}
+
+.product-price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF30C6; 
+}
+
+.product-actions {
+    margin-left: auto;
+}
+
+.add-to-cart {
+    background-color: #FF30C6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .add-to-cart:hover {
+        background-color: #bf2495;
+    }
+
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        height: auto;
+        flex-direction: row;
+    }
+
+    .product-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-title {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .product-description {
+        text-align: left;
+    }
+}
+
+.product-card {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Bahnschrift', sans-serif;
+    position: relative;
+    transition: all 0.3s ease; 
+    transform: translateY(0); 
+    background: white; 
+}
+
+    /* Эффект при наведении */
+    .product-card:hover {
+        transform: translateY(-5px); 
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        border-color: #FF30C6; 
+    }
+
+.product-card:hover .product-image {
+    transform: scale(1.03); 
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .product-card:hover {
+        transform: none; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+}
+
+/* Основной стиль для выпадающего списка */
+#DropDownList1 {
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF69B4'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+    /* Стиль для выбранного элемента (видимого в закрытом состоянии) */
+    #DropDownList1 option:checked {
+        font-family: 'Bahnschrift', sans-serif !important;
+        font-size: 14px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* Стиль для элементов списка */
+    #DropDownList1 option {
+        font-family: 'Bahnschrift', sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px;
+        background-color: white;
+        color: #333;
+    }
+
+    /* Стиль при наведении */
+    #DropDownList1:hover {
+        border-color: #FF69B4;
+    }
+
+    /* Стиль при фокусе */
+    #DropDownList1:focus {
+        border-color: #FF69B4;
+        box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+        outline: none;
+    }
+
+
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+
+/* Стили модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 350px;
+    position: relative;
+    animation: modalopen 0.4s;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+    .close:hover {
+        color: #FF69B4;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+    display: flex;
+    gap: 15px; 
+    margin: 20px 0;
+}
+
+/* Общие стили кнопок */
+.btn-login,
+.btn-register {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bahnschrift', sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    flex: 1; 
+}
+
+.btn-login {
+    background-color: #FF30C6;
+}
+
+.btn-register {
+    background-color: #006EBC; 
+}
+
+.btn-login:hover {
+    background-color: #bf2495;
+}
+
+.btn-register:hover {
+    background-color: #005591;
+}
+
+.cart-notification {
+    position: fixed;
+    top: 20px; 
+    left: 45%; 
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+    .cart-notification i {
+        margin-right: 10px;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-container {
+        width: 100%;
+        padding: 0;
+    }
+    .icons-container {
+        justify-content: center;
+    }
+}
+
+.header-icon:hover {
+    transform: scale(1.1);
+}

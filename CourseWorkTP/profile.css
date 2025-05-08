@@ -1,0 +1,184 @@
+﻿/* Основные стили */
+body {
+    font-family: 'Bahnschrift', Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.profile-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Кнопки */
+.btn-save {
+    background-color: #FF30C6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+    .btn-save:hover {
+        background-color: #bf2495;
+    }
+
+.btn-logout {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.btn-action {
+    background-color: #006EBC;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+    .btn-action:hover {
+        background-color: #005591;
+    }
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .profile-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Стили модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 350px;
+    position: relative;
+    animation: modalopen 0.4s;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+    .close:hover {
+        color: #FF69B4;
+    }
+
+.form-group2 {
+    margin-bottom: 15px;
+}
+
+.form-control2 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+/* Контейнер для кнопок */
+.buttons-container {
+    display: flex;
+    gap: 15px; /* Расстояние между кнопками */
+    margin: 20px 0;
+}
+
+/* Общие стили кнопок */
+.btn-changepass {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bahnschrift', sans-serif;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    flex: 1; /* Равная ширина */
+    background-color: #006EBC;
+}
+
+.btn-changepass:hover {
+    background-color: #005591;
+}
